@@ -70,7 +70,7 @@ public class AlgorithmaGraph {
             int node = stack.pop();
             System.out.print(cities[node] + " ");
 
-            // Visit neighbors of the current node
+          
             for (int i = 0; i < n; i++) {
                 if (graph[node][i] != 0 && !visited[i]) {
                     visited[i] = true;
@@ -82,13 +82,13 @@ public class AlgorithmaGraph {
     }
 
     public static void main(String[] args) {
-        // Matriks adjacency untuk graf (5 kota: Malang, Sidoarjo, Surabaya, Mojokerto, Tuban)
+      
         int[][] graph = {
-            {0, 30, 50, 0, 0},  // Malang -> Sidoarjo, Surabaya
-            {30, 0, 20, 40, 0},  // Sidoarjo -> Malang, Surabaya, Mojokerto
-            {50, 20, 0, 60, 0},  // Surabaya -> Malang, Sidoarjo, Mojokerto
-            {0, 40, 60, 0, 30},  // Mojokerto -> Sidoarjo, Surabaya, Tuban
-            {0, 0, 0, 30, 0}     // Tuban -> Mojokerto
+            {0, 30, 50, 0, 0},  
+            {30, 0, 20, 40, 0}, 
+            {50, 20, 0, 60, 0}, 
+            {0, 40, 60, 0, 30},  
+            {0, 0, 0, 30, 0}     
         };
 
         Scanner sc = new Scanner(System.in);
@@ -100,15 +100,15 @@ public class AlgorithmaGraph {
         System.out.println("4. Mojokerto");
         System.out.println("5. Tuban");
         System.out.print("Pilih kota (1-5): ");
-        int startCity = sc.nextInt() - 1; // Index dimulai dari 0, kurangi 1
+        int startCity = sc.nextInt() - 1;
 
-        // Menjalankan algoritma Dijkstra untuk jarak terpendek
+   
         dijkstra(graph, startCity, graph.length);
 
-        // Menjalankan algoritma BFS untuk traversal
+       
         bfs(graph, startCity, graph.length);
 
-        // Menjalankan algoritma DFS untuk traversal
+       
         dfs(graph, startCity, graph.length);
     }
 }
